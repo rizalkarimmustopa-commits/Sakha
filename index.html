@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Walimatul Khitan - Sakha</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FontAwesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#f8fafc;
+overflow-x:hidden;
+}
+
+.title-font{
+font-family:'Playfair Display',serif;
+}
+
+.script-font{
+font-family:'Great Vibes',cursive;
+}
+
+.gold{
+color:#d4af37;
+}
+
+.bg-gold{
+background:#d4af37;
+}
+
+.bg-navy{
+background:#0f172a;
+}
+
+.text-navy{
+color:#0f172a;
+}
+
+.cover{
+position:fixed;
+inset:0;
+z-index:9999;
+background:linear-gradient(
+135deg,
+#0f172a,
+#1e293b,
+#334155
+);
+display:flex;
+justify-content:center;
+align-items:center;
+transition:1.2s;
+}
+
+.cover.hide{
+transform:translateY(-100%);
+opacity:0;
+pointer-events:none;
+}
+
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.15);
+}
+
+.pulse-btn{
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.05);
+}
+100%{
+transform:scale(1);
+}
+}
+
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:.8s;
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.music-btn{
+position:fixed;
+right:20px;
+bottom:20px;
+z-index:999;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#d4af37;
+color:white;
+font-size:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.count-box{
+background:white;
+border-radius:15px;
+padding:15px;
+min-width:75px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.gallery img{
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.chat-item{
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.05);
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+font-weight:bold;
+color:#0f172a;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4a1f77c1ea.mp3?filename=islamic-background-110624.mp3" type="audio/mpeg">
+</audio>
+
+<!-- COVER -->
+<section id="cover" class="cover">
+
+<div class="text-center text-white p-8">
+
+<p class="uppercase tracking-[6px] text-sm mb-3">
+Undangan Khitanan
+</p>
+
+<h1 class="title-font text-5xl md:text-6xl mb-4">
+Walimatul Khitan
+</h1>
+
+<h2 class="script-font text-7xl gold mb-6">
+Raja
+</h2>
+
+<div class="glass rounded-2xl p-5 mb-6 max-w-md mx-auto">
+
+<p class="text-sm mb-2">
+Kepada Yth.
+</p>
+
+<p class="font-semibold">
+Bapak/Ibu/Saudara/i
+</p>
+
+<p id="guestName"
+class="text-xl gold mt-2 font-bold">
+Tamu Undangan
+</p>
+
+</div>
+
+<button id="openInvitation"
+class="pulse-btn bg-gold text-white px-8 py-4 rounded-full font-semibold shadow-xl">
+
+<i class="fas fa-envelope-open mr-2"></i>
+Buka Undangan
+
+</button>
+
+</div>
+</section>
+
+<!-- MUSIC BUTTON -->
+<button id="musicBtn" class="music-btn">
+<i class="fas fa-volume-up"></i>
+</button>
+
+<!-- HERO -->
+<section class="bg-navy text-white py-24 text-center">
+
+<div class="container mx-auto px-6">
+
+<h2 class="title-font text-4xl mb-4">
+Assalamu'alaikum Wr. Wb.
+</h2>
+
+<p class="max-w-2xl mx-auto leading-8 text-slate-300">
+Dengan memohon rahmat dan ridha Allah SWT,
+kami mengundang Bapak/Ibu/Saudara/i untuk hadir
+dalam acara Walimatul Khitan putra kami.
+</p>
+
+<div class="mt-10 italic text-slate-300 max-w-3xl mx-auto">
+"Semoga Allah menjadikannya anak yang shalih,
+berbakti kepada orang tua, dan bermanfaat bagi agama,
+bangsa dan sesama."
+</div>
+
+</div>
+
+</section>
+
+<!-- PROFIL -->
+<section class="py-20 fade-up">
+
+<div class="container mx-auto px-6 text-center">
+
+<h2 class="section-title mb-10">
+Profil Anak
+</h2>
+
+<img
+src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800"
+class="w-48 h-48 mx-auto rounded-full object-cover shadow-xl border-4 border-yellow-500">
+
+<h3 class="text-4xl mt-6 font-bold text-navy">
+M. Sakha Arrasya
+</h3>
+
+<p class="mt-4 text-gray-600">
+Putra dari
+</p>
+
+<p class="font-semibold mt-2">
+Bapak Rizal
+<br>
+&
+<br>
+Ibu Novi
+</p>
+
+</div>
+
+</section>
+
+<!-- ACARA -->
+<section class="bg-slate-100 py-20 fade-up">
+
+<div class="container mx-auto px-6">
+
+<h2 class="section-title text-center mb-12">
+Detail Acara
+</h2>
+
+<div class="max-w-xl mx-auto bg-white rounded-3xl p-8 shadow-xl">
+
+<div class="space-y-4">
+
+<p>
+<i class="fas fa-calendar gold mr-2"></i>
+Minggu, 20 Juli 2026
+</p>
+
+<p>
+<i class="fas fa-clock gold mr-2"></i>
+09.00 WIB - Selesai
+</p>
+
+<p>
+<i class="fas fa-location-dot gold mr-2"></i>
+Jl. Contoh Bahagia No.123,
+Jakarta Selatan
+</p>
+
+</div>
+
+<a href="https://maps.google.com"
+target="_blank"
+class="mt-6 inline-block bg-navy text-white px-6 py-3 rounded-full">
+
+<i class="fas fa-map-location-dot mr-2"></i>
+Lihat Lokasi
+
+</a>
+
+</div>
+
+<!-- COUNTDOWN -->
+<div class="mt-14 text-center">
+
+<h3 class="font-semibold text-xl mb-6">
+Menuju Hari Bahagia
+</h3>
+
+<div class="flex justify-center gap-3 flex-wrap">
+
+<div class="count-box">
+<div id="days" class="text-3xl font-bold">0</div>
+Hari
+</div>
+
+<div class="count-box">
+<div id="hours" class="text-3xl font-bold">0</div>
+Jam
+</div>
+
+<div class="count-box">
+<div id="minutes" class="text-3xl font-bold">0</div>
+Menit
+</div>
+
+<div class="count-box">
+<div id="seconds" class="text-3xl font-bold">0</div>
+Detik
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALERI -->
+<section class="py-20 fade-up">
+
+<div class="container mx-auto px-6">
+
+<h2 class="section-title text-center mb-10">
+Galeri Foto
+</h2>
+
+<div class="gallery grid grid-cols-2 md:grid-cols-3 gap-4">
+
+<img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800" class="rounded-xl h-60 w-full object-cover">
+
+<img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=800" class="rounded-xl h-60 w-full object-cover">
+
+<img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800" class="rounded-xl h-60 w-full object-cover">
+
+<img src="https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?w=800" class="rounded-xl h-60 w-full object-cover">
+
+<img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800" class="rounded-xl h-60 w-full object-cover">
+
+<img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800" class="rounded-xl h-60 w-full object-cover">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GIFT -->
+<section class="bg-slate-100 py-20 fade-up">
+
+<div class="container mx-auto px-6 text-center">
+
+<h2 class="section-title mb-10">
+Khitan Gift
+</h2>
+
+<div class="max-w-md mx-auto bg-white rounded-3xl p-8 shadow-xl">
+
+<i class="fas fa-building-columns text-5xl gold"></i>
+
+<p class="mt-5 font-bold">
+Bank BCA
+</p>
+
+<p id="rekening" class="text-2xl mt-3">
+NIHIL
+</p>
+
+<button onclick="copyRek()"
+class="mt-4 bg-gold text-white px-6 py-3 rounded-full">
+
+Salin No. Rekening
+
+</button>
+
+<hr class="my-6">
+
+<p class="font-semibold">
+Alamat Pengiriman Kado
+</p>
+
+<p class="text-gray-600 mt-2">
+Jl. Contoh Bahagia No.123,
+Jakarta Selatan
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RSVP -->
+<section class="py-20 fade-up">
+
+<div class="container mx-auto px-6">
+
+<h2 class="section-title text-center mb-10">
+Ucapan & Doa
+</h2>
+
+<div class="max-w-2xl mx-auto">
+
+<form id="wishForm"
+class="bg-white p-6 rounded-3xl shadow-xl space-y-4">
+
+<input
+id="nama"
+required
+placeholder="Nama"
+class="w-full border p-3 rounded-xl">
+
+<input
+id="hubungan"
+placeholder="Hubungan"
+class="w-full border p-3 rounded-xl">
+
+<textarea
+id="ucapan"
+required
+placeholder="Ucapan & Doa"
+class="w-full border p-3 rounded-xl"></textarea>
+
+<select
+id="kehadiran"
+class="w-full border p-3 rounded-xl">
+
+<option>Hadir</option>
+<option>Tidak Hadir</option>
+
+</select>
+
+<button
+class="w-full bg-navy text-white py-3 rounded-xl">
+
+Kirim Ucapan
+
+</button>
+
+</form>
+
+<div id="wishList" class="mt-8 space-y-4">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy text-white text-center py-16">
+
+<h3 class="text-2xl mb-4">
+Wassalamu'alaikum Wr. Wb.
+</h3>
+
+<p class="text-slate-400">
+Merupakan suatu kehormatan dan kebahagiaan
+bagi kami apabila Bapak/Ibu/Saudara/i
+berkenan hadir.
+</p>
+
+<div class="mt-8 text-slate-500">
+Made with ♥ by Digital Invitation Studio
+</div>
+
+</footer>
+
+<script>
+
+// Nama tamu dari URL
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("to");
+
+document.getElementById("guestName").innerText =
+guest ? decodeURIComponent(guest) : "Tamu Undangan";
+
+// Buka Undangan
+const cover = document.getElementById("cover");
+const music = document.getElementById("bgMusic");
+
+document.getElementById("openInvitation")
+.addEventListener("click", ()=>{
+
+cover.classList.add("hide");
+
+music.play();
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+});
+
+// Floating Music
+const musicBtn=document.getElementById("musicBtn");
+
+musicBtn.addEventListener("click",()=>{
+
+if(music.paused){
+music.play();
+musicBtn.innerHTML='<i class="fas fa-volume-up"></i>';
+}else{
+music.pause();
+musicBtn.innerHTML='<i class="fas fa-volume-mute"></i>';
+}
+
+});
+
+// Countdown
+const targetDate =
+new Date("July 20, 2026 09:00:00").getTime();
+
+setInterval(()=>{
+
+const now = new Date().getTime();
+const distance = targetDate - now;
+
+document.getElementById("days").innerHTML =
+Math.floor(distance/(1000*60*60*24));
+
+document.getElementById("hours").innerHTML =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutes").innerHTML =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("seconds").innerHTML =
+Math.floor((distance%(1000*60))/1000);
+
+},1000);
+
+// Copy Rekening
+function copyRek(){
+
+navigator.clipboard.writeText(
+document.getElementById("rekening").innerText
+);
+
+alert("Nomor rekening berhasil disalin!");
+
+}
+
+// RSVP
+const wishForm=document.getElementById("wishForm");
+const wishList=document.getElementById("wishList");
+
+wishForm.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+const nama=document.getElementById("nama").value;
+const hubungan=document.getElementById("hubungan").value;
+const ucapan=document.getElementById("ucapan").value;
+const hadir=document.getElementById("kehadiran").value;
+
+const item=document.createElement("div");
+
+item.className="chat-item";
+
+item.innerHTML=`
+<div class="flex justify-between mb-2">
+<strong>${nama}</strong>
+<span class="text-sm text-gray-500">${hadir}</span>
+</div>
+
+<div class="text-sm text-gray-500 mb-2">
+${hubungan}
+</div>
+
+<p>${ucapan}</p>
+`;
+
+wishList.prepend(item);
+
+wishForm.reset();
+
+});
+
+// Scroll Animation
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{threshold:.1});
+
+document
+.querySelectorAll(".fade-up")
+.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
